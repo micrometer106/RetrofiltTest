@@ -32,8 +32,14 @@ class MainActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             val result = api.posts().await()
             printItem(result)
+            showFagment(result)
         }
 
+    }
+
+    fun showFagment(list : List<PostResp>) {
+        var mainFragment = MainFragment(list)
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container, mainFragment, "main_frag").commit()
     }
 
     fun printItem(list: List<PostResp>?) {
