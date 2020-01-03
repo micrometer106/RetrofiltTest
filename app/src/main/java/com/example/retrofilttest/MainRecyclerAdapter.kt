@@ -14,7 +14,7 @@ class MainRecyclerAdapter constructor(list : List<PostResp>) :
     init {
         mList = list
     }
-
+//test2
     override fun getItemCount(): Int {
         return mList.size
     }
